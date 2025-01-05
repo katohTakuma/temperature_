@@ -13,7 +13,7 @@ temperature.pyは、ランダムな温度データをROS 2トピック /temperat
 ### 使用方法
 - 1つ目のターミナルで以下を実行します
 ```bash
-$ git clone
+$ git clone 
 
 $　cd 
 
