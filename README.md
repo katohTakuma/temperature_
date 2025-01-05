@@ -8,7 +8,7 @@ temperature.py は、ランダムな温度データをROS 2トピック /tempera
 
 ## 動作環境
 - Python: 3.7～3.10
-- Ubuntu 24.04 LTS
+- ubuntu-22.04
 - ROS 2: テスト済み（foxy）
 
 ## 使用方法
