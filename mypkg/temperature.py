@@ -15,17 +15,21 @@ class Temperature(Node):
 
     def publish_temperature(self):
         msg = Float32()
-        msg.data = round(random.uniform(15.0, 25.0),1)  # ランダムな温度データ（15.0～25.0度>）
+        msg.data = round(random.uniform(15.0, 25.0),1)
         self.pub.publish(msg)
-        self.get_logger().info(f"Published temperature: {msg.data:.1f}°C")
+        self.get_logger().info(f"今の温度は: {msg.data:.1f}°C")
 
 
 def main():
     rclpy.init()
     node = Temperature()
-    rclpy.spin(node)
-    node.destroy_node()
-    rclpy.shutdown()
+     try:
+        rclpy.spin(node)
+    except rclpy.executors.ExternalShutdownException:
+        node.get_logger().info("Node was externally shut down.")
+    finally:
+        node.destroy_node()
+        rclpy.shutdown()
 
 if __name__ == "__main__":
     main()
