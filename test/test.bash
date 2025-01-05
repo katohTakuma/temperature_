@@ -6,6 +6,6 @@ cd $dir/ros2_ws
 colcon build
 source $dir/.bashrc
 
-timeout 10 ros2 run mypkg temperature.py > /tmp/mypkg.log
+timeout 10 ros2 run mypkg temperature > /tmp/temperature.log
 
 cat /tmp/temperature.log | grep 'Published temperature:'
