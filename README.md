@@ -35,23 +35,20 @@ $ ros2 topic echo /temperature
 ```
 
 ## 動作例
-#### 正常な温度の場合
+#### 正常な温度の場合:
 [INFO] [時間] [temperature]: 正常な温度です
 
 #### 高温警告の場合:
 [WARN] [時間] [temperature]: 高温になっています
 
-# ノード
+## ノード
 ### temperature
 - **役割:** ランダムな温度データを1秒ごとにパブリッシュします。
 - **トピック:** `/temperature` 
-```bash
-ros2 run mypkg temperature
-```
   
 ## 注意事項
 - **シミュレーション専用:** 実際の温度センサーは使用していません。
-- **リスナーノード:** 他のノードがトピックデータを利用する場合、リスナーノードを別で作成してください。
+- **リスナーノード:** 他のノードがトピックデータを利用する場合、リスナーノードは別で作成してください。
 
 ##ライセンス
 - © 2025 katoh takuma
@@ -63,9 +60,12 @@ ros2 run mypkg temperature
 - [ryuichiueda/ubuntu22.04-ros2](https://hub.docker.com/r/ryuichiueda/ubuntu22.04-ros2)
 
 # 参考資料
-https://ryuichiueda.github.io/slides_marp/robosys2024/lesson8.html#22
-https://ryuichiueda.github.io/slides_marp/robosys2024/lesson9.html#19
-https://ryuichiueda.github.io/slides_marp/robosys2024/lesson10.html#8
+[2>&1はどういう意味？](https://qiita.com/TomohiroSaito/items/1393ce5a01b75adcbf30)
 
+[【必須】grepコマンドを使いこなす](https://qiita.com/yagiryu/items/6128ad998560510be5de)
 
+[rclpy throws an exception when it is interrupted-rclpy.executors.ExternalShutdownException](https://github.com/ros2/rclpy/issues/1166)
 
+[ランダムに出力！Pythonでrandomを使う方法【初心者向け】](https://magazine.techacademy.jp/magazine/15821)
+
+[githubの"Process completed with exit code 1."というエラーはなんなのか](https://qiita.com/KerorinNF/questions/939cb56ed00ea5da665f)
