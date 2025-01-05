@@ -13,7 +13,11 @@ temperature.pyは、ランダムな温度データをROS 2トピック /temperat
 ### 使用方法
 - 1つ目のターミナルで以下を実行します
 ```bash
-ros2 run mypkg temperature
+$ git clone
+
+$　cd 
+
+$ 
 ```
 - **ログ出力:**
 パブリッシュされた温度データは、ログにも「今の温度は: <温度>°C」という形式で記録されます。
