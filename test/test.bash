@@ -12,5 +12,5 @@ echo "=== 温度ログのチェック ==="
 grep '今の温度は:' /tmp/mypkg.log
 
 echo "=== 高温警告メッセージのチェック ==="
-grep '高温になっています:' /tmp/mypkg.log
+grep '高温になっています。今の温度は:' /tmp/mypkg.log
 
