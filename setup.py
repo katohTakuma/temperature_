@@ -6,8 +6,7 @@ package_name = 'mypkg'
 setup(
     name=package_name,
     version='0.0.0',
-    packages=[package_name],
-    package_dir={'mypkg': 'mypkg'},
+    packages=find_packages(include=['mypkg', 'mypkg.*']),
     data_files=[
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
