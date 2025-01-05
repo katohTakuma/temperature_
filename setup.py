@@ -26,4 +26,3 @@ setup(
              'temperature = mypkg.temperature:main',
         ],
     },
-)

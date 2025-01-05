@@ -6,9 +6,6 @@ cd $dir/ros2_ws
 colcon build
 source $dir/.bashrc
 
-# `temperature` ノードを起動してログを記録
-timeout 10 ros2 run mypkg temperature > /tmp/temperature.log
+timeout 10 ros2 run mypkg temperature.py > /tmp/mypkg.log
 
-# ログから温度データをフィルタリングして表示
 cat /tmp/temperature.log | grep 'Published temperature:'
-
