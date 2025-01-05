@@ -20,10 +20,10 @@ class Temperature(Node):
         self.get_logger().info(f"今の温度は: {msg.data:.1f}°C")
 
 
-def main():
-    rclpy.init()
+def main(args=None):
+    rclpy.init(args=None)
     node = Temperature()
-     try:
+    try:
         rclpy.spin(node)
     except rclpy.executors.ExternalShutdownException:
         node.get_logger().info("Node was externally shut down.")
@@ -33,3 +33,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
