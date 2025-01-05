@@ -7,4 +7,10 @@ colcon build
 source $dir/.bashrc
 
 timeout 10 ros2 run mypkg temperature > /tmp/mypkg.log 2>&1
+
+echo "=== 温度ログのチェック ==="
 grep '今の温度は:' /tmp/mypkg.log
+
+echo "=== 高温警告メッセージのチェック ==="
+grep '高温になっています:' /tmp/mypkg.log
+

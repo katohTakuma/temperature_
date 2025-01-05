@@ -15,9 +15,13 @@ class Temperature(Node):
 
     def publish_temperature(self):
         msg = Float32()
-        msg.data = round(random.uniform(15.0, 25.0),1)
+        msg.data = round(random.uniform(15.0, 30.0),1)
         self.pub.publish(msg)
-        self.get_logger().info(f"今の温度は: {msg.data:.1f}°C")
+
+        if msg.data > 25.0:
+            self.get_logger().warn(f"高温になっています。今の温度は: {msg.data:.1f}°C")
+        else:
+            self.get_logger().info(f"今の温度は: {msg.data:.1f}°C")
 
 
 def main(args=None):
