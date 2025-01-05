@@ -1,63 +1,81 @@
 # temperature.py
 ![test](https://github.com/katohTakuma/temperature_/actions/workflows/test.yml/badge.svg)
+
 ## 概要
-temperature.pyは、ランダムな温度データをROS 2トピック /temperature に1秒ごとにパブリッシュするノードを提供することを目的としたスクリプトです。
+temperature.py は、ランダムな温度データをROS 2トピック /temperature にパブリッシュするシミュレーションノードです。
+- 温度範囲: 15.0°C ～ 30.0°C
+- 25.0°C以上のときに「高温警告」をログに出力
 
-## 特徴
-### ランダムな温度生成:
-- 温度の急激な変化に対応する機器の機能をシミュレーションするためのスクリプト。
-- 温度データ (摂氏) を生成。
-- 温度範囲は15.0°Cから30.0°Cに設定。
-- このスクリプトでは温度が25.0°Cを超える場合、「高温になっています」という警告をログに出力。調整次第で警告を出す温度を変更可能。
+## 動作環境
+- Python: 3.7～3.10
+- Ubuntu 24.04 LTS
+- ROS 2: テスト済み（foxy）
 
-- 他のノードが利用可能な形で公開。
-
-### トピックへのパブリッシュ:
-生成された温度データはROS 2トピック /temperature にパブリッシュされます。
-
-### 使用方法
-- 1つ目のターミナルで以下を実行してください
+## 使用方法
+### 1. 環境をセットアップ
 ```bash
 $ git clone https://github.com/katohTakuma/temperature_.git
 
-$ cd mypkg
+$ cd temperature_
 
+$ colcon build
+
+$ source install/setup.bash
+```
+
+
+### 2. ノードを起動
+#### 温度データをパブリッシュ
+```bash
 $ ros2 run mypkg temperature
 ```
-実行後、ログが表示されます。
-
-
-- 別のターミナルを開き、以下を実行してください
+#### トピックデータを確認: 別ターミナルで以下を実行
 ```bash
 $ ros2 topic echo /temperature
 ```
-実行後、topicに出力します。
 
-**ログ出力:**
-- パブリッシュされた温度データは、ログにも「今の温度は: <温度>°C」という形式で記録されます。
-- 異常な数値(このノードでは25.0℃以上)を検出すると、「高温になっています。今の温度は: <温度>°C」というように表示されます。
+## 動作例
+- ros2 run mypkg temperatureの実行時
+ #### 正常な温度の場合:
+  [INFO] [時間] [temperature]: 正常な温度です
 
-#### 例
- - [INFO] [1736089559.175015254] [temperature]: 今の温度は: 24.9°C
- - [WARN] [1736089560.174805118] [temperature]: 高温になっています。今の温度は: 29.8°C
+ #### 高温警告の場合:
+  [WARN] [時間] [temperature]: 高温になっています
 
-## ノード
-### temperature
-- **役割:** ランダムな温度データを1秒ごとにパブリッシュします。
-- **トピック:** `/temperature` (型: `std_msgs/Float32`)
-```bash
-ros2 run mypkg temperature
-```
 
+- ros2 topic echo /temperatureの実行時
+#### 生成された温度をトピックに出力
+  data: 17.5
  
+  ---
+  
+  data: 26.7
 
+  
+### トピック(/temperature)
+ 温度センサーの値を模倣したランダムな温度データを配信するROS 2トピックです。
 
+  
+## 注意事項
+- **シミュレーション専用:** 実際の温度センサーは使用していません。
+- **リスナーノード:** 他のノードがトピックデータを利用する場合、リスナーノードは別で作成してください。
 
+## ライセンス
+- © 2025 katoh takuma
+- 本ソフトウェアは BSD-3-Clauseライセンス で提供されています。
+- 本パッケージのコードは、Ryuichi Ueda氏の許可を得て、下記のスライドとコンテナ環境(© 2025 Ryuichi Ueda)（CC-BY-SA 4.0)を一部参考にし、自身の著作として作成したものです。
+- [Robot Operating System(ROS2)](https://ryuichiueda.github.io/slides_marp/robosys2024/lesson8.html#22)
+- [ROS 2の通信と型](https://ryuichiueda.github.io/slides_marp/robosys2024/lesson9.html#19)
+- [ROSシステムのテスト](https://ryuichiueda.github.io/slides_marp/robosys2024/lesson10.html#8)
+- [ryuichiueda/ubuntu22.04-ros2](https://hub.docker.com/r/ryuichiueda/ubuntu22.04-ros2)
 
-## 注意点
-このスクリプトは単一のパブリッシャノードとして設計されており、テスト用のリスナーノードは別途作成する必要があります。
-実際の温度センサーを利用していないため、あくまでシミュレーション用途のスクリプトです。
+# 参考資料
+[2>&1はどういう意味？](https://qiita.com/TomohiroSaito/items/1393ce5a01b75adcbf30)
 
+[【必須】grepコマンドを使いこなす](https://qiita.com/yagiryu/items/6128ad998560510be5de)
 
+[rclpy throws an exception when it is interrupted-rclpy.executors.ExternalShutdownException](https://github.com/ros2/rclpy/issues/1166)
 
+[ランダムに出力！Pythonでrandomを使う方法【初心者向け】](https://magazine.techacademy.jp/magazine/15821)
 
+[githubの"Process completed with exit code 1."というエラーはなんなのか](https://qiita.com/KerorinNF/questions/939cb56ed00ea5da665f)
