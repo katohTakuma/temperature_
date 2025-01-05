@@ -19,9 +19,9 @@ class Temperature(Node):
         self.pub.publish(msg)
 
         if msg.data > 25.0:
-            self.get_logger().warn(f"高温になっています。今の温度は: {msg.data:.1f}°C")
+            self.get_logger().warn(f"高温になっています")
         else:
-            self.get_logger().info(f"今の温度は: {msg.data:.1f}°C")
+            self.get_logger().info(f"正常な温度です")
 
 
 def main(args=None):
