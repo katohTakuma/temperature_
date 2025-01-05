@@ -1,12 +1,13 @@
 from setuptools import setup
-import os                  #追加。OSの機能のパッケージ
-from glob import glob      #追加。グロブ（ワイルドカード）を扱う関数
+import os
+from glob import glob
 package_name = 'mypkg'
 
 setup(
     name=package_name,
     version='0.0.0',
     packages=[package_name],
+    package_dir={'mypkg': 'mypkg'},
     data_files=[
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
@@ -22,7 +23,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-             'temperature = mypkg.temperature:main', #talker.pyのmain関数という意味
+             'temperature = mypkg.temperature:main',
         ],
     },
 )
