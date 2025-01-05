@@ -1,0 +1,28 @@
+from setuptools import setup
+import os                  #追加。OSの機能のパッケージ
+from glob import glob      #追加。グロブ（ワイルドカード）を扱う関数
+package_name = 'mypkg'
+
+setup(
+    name=package_name,
+    version='0.0.0',
+    packages=[package_name],
+    data_files=[
+        ('share/ament_index/resource_index/packages',
+            ['resource/' + package_name]),
+        ('share/' + package_name, ['package.xml']),
+    (os.path.join('share', package_name), glob('launch/*.launch.py'))
+    ],
+    install_requires=['setuptools'],
+    zip_safe=True,
+    maintainer='taku0225',
+    maintainer_email='s23c1037tg@s.chibakoudai.jp',
+    description='a package for practice',
+    license='BSD-3-Clause',
+    tests_require=['pytest'],
+    entry_points={
+        'console_scripts': [
+             'temperature = mypkg.temperature:main', #talker.pyのmain関数という意味
+        ],
+    },
+)
