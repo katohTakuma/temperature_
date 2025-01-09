@@ -1,15 +1,14 @@
-# temperature.py
+# 温度管理シミュレーションノード
 ![test](https://github.com/katohTakuma/temperature_/actions/workflows/test.yml/badge.svg)
 
 ## 概要
-temperature.py は、ランダムな温度データをROS 2トピック /temperature にパブリッシュするシミュレーションノードです。
+temperatureは、ランダムな温度データをROS2トピック /temperature にパブリッシュするシミュレーションノードです。
 - 温度範囲: 15.0°C ～ 30.0°C
 - 25.0°C以上のときに「高温警告」をログに出力
 
 ## 動作環境
-- Python: 3.7～3.10
 - ubuntu-22.04
-- ROS 2: テスト済み（foxy）
+- ROS2: テスト済み（foxy）
 
 ## 使用方法
 ### 1. 環境をセットアップ
