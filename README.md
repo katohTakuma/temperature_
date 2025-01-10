@@ -2,7 +2,7 @@
 ![test](https://github.com/katohTakuma/temperature_/actions/workflows/test.yml/badge.svg)
 
 ## 概要
-temperatureは、ランダムな温度データをROS2トピック /temperature にパブリッシュするシミュレーションノードです。
+temperature_nodeは、ランダムな温度データをROS2トピック /temperature にパブリッシュするシミュレーションノードです。
 - 温度範囲: 15.0°C ～ 30.0°C
 - 25.0°C以上のときに「高温警告」をログに出力
 
