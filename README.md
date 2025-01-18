@@ -42,7 +42,7 @@ data: 26.899999618530273
 
 ## 権利
 
-- © 2025 katoh Takuma
+- © 2025 katoh takuma
 - 本ソフトウェアパッケージは、3条項BSDライセンスのもとで再配布や利用が認められています
 - 本パッケージの一部のコードは、Ryuichi Ueda氏の許可を得て、下記のスライド(© 2025 Ryuichi Ueda)（CC-BY-SA 4.0)を一部参考にし、自身の著作として作成されたものです
   - [Robot Operating System (ROS 2)](https://ryuichiueda.github.io/slides_marp/robosys2024/lesson8.html#20)
