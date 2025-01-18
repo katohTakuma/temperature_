@@ -11,8 +11,8 @@ class Temperature(Node):
     def __init__(self):
         super().__init__("temperature")
         self.pub = self.create_publisher(Float32, "temperature", 10)
-        self.warning_pub = self.create_publisher(Float32, "temperature_warning", 10)  # 高温警告用のトピック
-        self.create_timer(1.0, self.publish_temperature)  # 1秒ごとに実行
+        self.warning_pub = self.create_publisher(Float32, "temperature_warning", 10)
+        self.create_timer(1.0, self.publish_temperature)
 
     def publish_temperature(self):
         msg = Float32()
@@ -20,7 +20,7 @@ class Temperature(Node):
         self.pub.publish(msg)
 
         if msg.data > 25.0:
-            self.warning_pub.publish(msg)  # 高温時は警告トピックに出力
+            self.warning_pub.publish(msg)
         else:
             self.get_logger().info(f"正常な温度です: {msg.data}°C")
 
