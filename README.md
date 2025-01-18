@@ -1,10 +1,10 @@
-Temperature Node
+# Temperatureノード
+![test](https://github.com/katohTakuma/temperature_node/actions/workflows/test.yml/badge.svg)
 
-概要
+## 概要
+temperature_nodeはROS 2のパッケージです。温度の監視を行い、温度データをパブリッシュし、超えてはいけない値の場合には別のトピックで高温警告を発行します。あくまでもシミュレーション用なのでtemperature.pyはランダムに値を出力するようにしています。
 
-このリポジトリはROS 2のパッケージです。温度の監視を行い、温度データをパブリッシュし、超えてはいけない値の場合には別のトピックで高温警告を発行します。
-
-使い方
+## 使い方
 
 ワークスペースをビルドします：
 
@@ -25,16 +25,16 @@ ros2 run temperature_node temperature
 ros2 topic echo /temperature
 ros2 topic echo /temperature_warning
 
-実行例と結果
+## 実行例と結果
 
 下記は、温度を模擬した際の実行例です：
 
 温度データの確認：
 
 ros2 topic echo /temperature
----
+
 data: 23.4
----
+
 data: 24.7
 
 高温警告の確認：
@@ -43,7 +43,7 @@ ros2 topic echo /temperature_warning
 ---
 data: 26.0
 
-参考資料
+## 参考資料
 
 ROS 2 Documentation
 
@@ -53,7 +53,7 @@ ROS 2 Documentation
 
 ROS 2: Foxy
 
-権利
+## 権利
 
 SPDX-License-Identifier: BSD-3-Clause
 
