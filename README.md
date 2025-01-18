@@ -44,12 +44,12 @@ data: 26.899999618530273
 
 - © 2025 katoh Takuma
 - 本ソフトウェアパッケージは、3条項BSDライセンスのもとで再配布や利用が認められています
-- 本パッケージのコードは、Ryuichi Ueda氏の許可を得て、下記のスライド(© 2025 Ryuichi Ueda)（CC-BY-SA 4.0)を一部参考にし、自身の著作として作成されたものです
+- 本パッケージの一部のコードは、Ryuichi Ueda氏の許可を得て、下記のスライド(© 2025 Ryuichi Ueda)（CC-BY-SA 4.0)を一部参考にし、自身の著作として作成されたものです
   - [Robot Operating System (ROS 2)](https://ryuichiueda.github.io/slides_marp/robosys2024/lesson8.html#20)
   
 ## 参考資料
 
- - 使用したコンテナ: [ryuichiueda/ubuntu22.04-ros2:latest](ryuichiueda/ubuntu22.04-ros2:latest)
+ - 使用させていただいたコンテナ: [ryuichiueda/ubuntu22.04-ros2:latest](ryuichiueda/ubuntu22.04-ros2:latest)
  - [if文を使った条件分岐](https://www.javadrive.jp/python/if/index1.html)
  - [ROSシステムのテスト](https://ryuichiueda.github.io/slides_marp/robosys2024/lesson10.html#1)
  - [Pythonでランダムな小数・整数を生成するrandom, randrange, randintなど](https://note.nkmk.me/python-random-randrange-randint/)
