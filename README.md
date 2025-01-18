@@ -37,7 +37,7 @@ data: 26.899999618530273
 
 ## テスト環境
 - Ubuntu 20.04.6 LTS
-- ROS2: Foxy
+- ROS2: foxy
 
 
 ## 権利
