@@ -1,4 +1,4 @@
-# Temperature_node
+# temperature_node
 ![test](https://github.com/katohTakuma/temperature_node/actions/workflows/test.yml/badge.svg)
 
 ## 概要
