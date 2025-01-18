@@ -18,8 +18,16 @@ fi
 # ワークスペースのビルド
 colcon build
 
-# トピックのテスト
+# ノードをバックグラウンドで起動
 source install/setup.bash
+ros2 run temperature_node temperature &  # ノード起動
+TEMP_NODE_PID=$!  # 起動したノードのPIDを保存
+
+# トピックのテスト
+sleep 2  # ノードが起動し、トピックを発行し始めるのを待つ
 ros2 topic pub /temperature std_msgs/Float32 "{data: 26.0}" &
 ros2 topic echo /temperature_warning --once
+
+# ノードを終了
+kill $TEMP_NODE_PID
 
