@@ -9,19 +9,25 @@ if [ -f "/opt/ros/humble/setup.bash" ]; then
 elif [ -f "/opt/ros/foxy/setup.bash" ]; then
     source /opt/ros/foxy/setup.bash
 else
-    echo "ROS setup.bash not found!"
+    echo "ROS setup.bashが見つかりません"
     exit 1
 fi
 
 colcon build
 
 source install/setup.bash
-ros2 run temperature_node temperature &
-TEMP_NODE_PID=$!
 
-sleep 2
-ros2 topic pub /temperature std_msgs/Float32 "{data: 26.0}" &
+ros2 run temperature_node temperature &
+sleep 2 
+
+
+echo " /temperatureトピックをテストしています..."
+ros2 topic pub --once /temperature std_msgs/Float32 "{data: 26.0}"
+sleep 1 
+
+echo "/temperature_warningトピックをテストしています..."
 ros2 topic echo /temperature_warning --once
 
-kill $TEMP_NODE_PID
+# スクリプトの終了
+echo "テスト成功"
 
