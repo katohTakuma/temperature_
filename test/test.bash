@@ -21,5 +21,10 @@ timeout 20s ros2 run temperature_node temperature &
 
 ros2 topic echo /temperature_warning --once
 
+ros2 topic pub /temperature std_msgs/Float32 "{data: 26.0}" --once
+
+ros2 topic pub /temperature std_msgs/Float32 "{data: 27.0}" --once
+
+ros2 topic pub /temperature std_msgs/Float32 "{data: 28.0}" --once
 echo "すべてのテストが完了しました。"
 
