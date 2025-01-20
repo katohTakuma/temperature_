@@ -53,16 +53,15 @@ data: '警告: 温度が安全基準を超えています (29.0°C)'
 
  - [if文を使った条件分岐/ TATSUO IKURA](https://www.javadrive.jp/python/if/index1.html)
 
- - [Pythonでランダムな小数・整数を生成するrandom, randrange, randintなど/ note.nkmk.me](https://note.nkmk.me/python-random-randrange-randint/)
+ - [Pythonでランダムな小数・整数を生成するrandom/ note.nkmk.me](https://note.nkmk.me/python-random-randrange-randint/)
 
- - [ノードの再起動を跨いだPIDの衝突について/ @sile](https://qiita.com/sile/items/c1a357efdaa9cae4cd9c)
+ - [Pythonのsleep関数/ アンドエンジニア編集部](https://and-engineer.com/articles/ZqOo2xEAACcA8C4A)
 
- - [Pythonのsleep関数とは？概要や使い方、応用例を解説/ アンドエンジニア編集部](https://and-engineer.com/articles/ZqOo2xEAACcA8C4A)
-
- - [ライブラリ: string/ 後藤隼人](https://www.lifewithpython.com/2013/04/string.html)
+ - [stringというライブラリ/ 後藤隼人](https://www.lifewithpython.com/2013/04/string.html)
 
  - [数値を四捨五入するround関数/ かわさきしんじ](https://atmarkit.itmedia.co.jp/ait/articles/2104/06/news022.html)
 
+ - [連続した数値の配列(リスト)を作成するには seq](https://hydrocul.github.io/wiki/programming_languages_diff/list/range.html#google_vignette)
 #### 使用させていただいたコンテナ
    - [ryuichiueda/ubuntu22.04-ros2:latest](ryuichiueda/ubuntu22.04-ros2:latest)
 
