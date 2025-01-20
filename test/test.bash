@@ -2,7 +2,6 @@
 # SPDX-FileCopyrightText: 2025 katoh takuma
 # SPDX-License-Identifier: BSD-3-Clause
 
-set -e
 
 if [ -f "/opt/ros/humble/setup.bash" ]; then
     source /opt/ros/humble/setup.bash
