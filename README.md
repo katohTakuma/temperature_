@@ -11,7 +11,7 @@
   - **データ型**: `std_msgs/msg/Float32`
 
 - **注**:
-  このパッケージの動作確認用トピック `/temperature` については、ユーザーが通常利用することを想定していないため説明を省略します。
+  このパッケージの動作確認用トピック `/temperature` は、ユーザーが通常利用することを想定していないため説明を省略します。
 
 ## 使い方
 1つ目のターミナルで以下を実行します。
@@ -51,16 +51,18 @@ data: '警告: 温度が安全基準を超えています (29.0°C)'
 
 ## 参考資料
 
- - [if文を使った条件分岐](https://www.javadrive.jp/python/if/index1.html)
-   
- - [ROSシステムのテスト](https://ryuichiueda.github.io/slides_marp/robosys2024/lesson10.html#1)
-   
- - [Pythonでランダムな小数・整数を生成するrandom, randrange, randintなど](https://note.nkmk.me/python-random-randrange-randint/)
-   
- - [ノードの再起動を跨いだPIDの衝突について](https://qiita.com/sile/items/c1a357efdaa9cae4cd9c)
-   
- - [Pythonのsleep関数とは？概要や使い方、応用例を解説](https://and-engineer.com/articles/ZqOo2xEAACcA8C4A)
-   
+ - [if文を使った条件分岐/ TATSUO IKURA](https://www.javadrive.jp/python/if/index1.html)
+
+ - [Pythonでランダムな小数・整数を生成するrandom, randrange, randintなど/ note.nkmk.me](https://note.nkmk.me/python-random-randrange-randint/)
+
+ - [ノードの再起動を跨いだPIDの衝突について/ @sile](https://qiita.com/sile/items/c1a357efdaa9cae4cd9c)
+
+ - [Pythonのsleep関数とは？概要や使い方、応用例を解説/ アンドエンジニア編集部](https://and-engineer.com/articles/ZqOo2xEAACcA8C4A)
+
+ - [ライブラリ: string/ 後藤隼人](https://www.lifewithpython.com/2013/04/string.html)
+
+ - [数値を四捨五入するround関数/ かわさきしんじ](https://atmarkit.itmedia.co.jp/ait/articles/2104/06/news022.html)
+
 #### 使用させていただいたコンテナ
    - [ryuichiueda/ubuntu22.04-ros2:latest](ryuichiueda/ubuntu22.04-ros2:latest)
 
