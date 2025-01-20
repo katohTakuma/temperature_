@@ -61,7 +61,7 @@ data: '警告: 温度が安全基準を超えています (29.0°C)'
 
  - [数値を四捨五入するround関数/ かわさきしんじ](https://atmarkit.itmedia.co.jp/ait/articles/2104/06/news022.html)
 
- - [連続した数値の配列(リスト)を作成するには seq](https://hydrocul.github.io/wiki/programming_languages_diff/list/range.html#google_vignette)
+ - [連続した数値の配列(リスト)を作成するには seq/ hydrocul](https://hydrocul.github.io/wiki/programming_languages_diff/list/range.html#google_vignette)
 #### 使用させていただいたコンテナ
    - [ryuichiueda/ubuntu22.04-ros2:latest](ryuichiueda/ubuntu22.04-ros2:latest)
 
