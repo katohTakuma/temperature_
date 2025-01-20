@@ -9,21 +9,39 @@ if [ -f "/opt/ros/humble/setup.bash" ]; then
 elif [ -f "/opt/ros/foxy/setup.bash" ]; then
     source /opt/ros/foxy/setup.bash
 else
-    echo "ROS の setup.bash が見つかりません"
+    echo "ROS の setup.bash が見つかりません！"
     exit 1
 fi
 
 colcon build
 
 source install/setup.bash
-ros2 run temperature_node temperature &
-TEMP_NODE_PID=$!
 
-sleep 2
-ros2 topic pub /temperature std_msgs/Float32 "{data: 26.0}" &
-ros2 topic echo /temperature_warning --once
+# テストを繰り返す回数
+test_count=3  # ここでテストの回数を変更
 
-# プロセスの停止を wait に変更
-echo "温度ノードの終了を待っています..."  # 日本語コメント
-wait $TEMP_NODE_PID
+# 試行回数分繰り返す
+for i in $(seq 1 $test_count); do
+    echo "テスト $i 番目を実行しています..."
+
+    # ノードをバックグラウンドで実行
+    ros2 run temperature_node temperature &
+    TEMP_NODE_PID=$!
+
+    sleep 2
+
+    # トピックにデータを送信
+    ros2 topic pub /temperature std_msgs/Float32 "{data: 26.0}" &
+    
+    # トピックを購読
+    ros2 topic echo /temperature_warning --once
+
+    # プロセスの終了を待機
+    wait $TEMP_NODE_PID
+
+    echo "テスト $i 番目が完了しました。"
+done
+
+echo "すべてのテストが完了しました。"
+D
 
