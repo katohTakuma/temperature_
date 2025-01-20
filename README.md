@@ -2,9 +2,16 @@
 ![test](https://github.com/katohTakuma/temperature_node/actions/workflows/test.yml/badge.svg)
 
 ## 概要
-- temperature_nodeは温度データをパブリッシュし、超えてはいけない値の場合には別のトピックに出すパッケージです。
+- temperature_nodeは温度データをパブリッシュし、超えてはいけない値の場合にはトピックに出すパッケージです。
 - あくまでもシミュレーション用なので、このパッケージでは温度データはランダムに出力するようにしています。
 
+### トピック
+- `/temperature_warning`
+  - **役割**: 温度が25.0°Cを超えた場合に、高温警告メッセージをパブリッシュします。
+  - **データ型**: `std_msgs/msg/Float32`
+
+- **注**:
+  このパッケージの動作確認用トピック `/temperature` については、ユーザーが通常利用することを想定していないため、ここでは説明を省略します。
 
 ## 使い方
 1つ目のターミナルで以下を実行します。
@@ -36,9 +43,12 @@ data: 26.899999618530273
 
 
 ## テスト環境
-- Ubuntu 20.04.6 LTS
-- ROS2: foxy
-
+- **ローカル環境**:
+  - Ubuntu 20.04.6 LTS
+  - ROS2: foxy
+ 
+- **GitHub Actions環境**:
+  - Ubuntu 22.04
 
 ## 権利
 
@@ -49,7 +59,7 @@ data: 26.899999618530273
   
 ## 参考資料
 
- - 使用したコンテナ: [ryuichiueda/ubuntu22.04-ros2:latest](ryuichiueda/ubuntu22.04-ros2:latest)
+ - 使用させていただいたコンテナ: [ryuichiueda/ubuntu22.04-ros2:latest](ryuichiueda/ubuntu22.04-ros2:latest)
  - [if文を使った条件分岐](https://www.javadrive.jp/python/if/index1.html)
  - [ROSシステムのテスト](https://ryuichiueda.github.io/slides_marp/robosys2024/lesson10.html#1)
  - [Pythonでランダムな小数・整数を生成するrandom, randrange, randintなど](https://note.nkmk.me/python-random-randrange-randint/)
