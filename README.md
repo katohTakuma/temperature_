@@ -22,23 +22,21 @@ $ ros2 run temperature_node temperature
 ```bash
 ros2 topic echo /temperature_warning
 ```
-これにより正常な温度はログに出力し、異常な温度(このパッケージでは25度以上)の場合はトピックに出力します。
+これにより異常な温度(このパッケージでは25度以上)の場合はトピックに出力します。
 
 ### 実行例
 
 下記は実行例です：
 ```bash
 $ ros2 run temperature_node temperature
-[INFO] [1737223940.463750766] [temperature]: 正常な温度です: 18.5°C
-[INFO] [1737223941.457519160] [temperature]: 正常な温度です: 22.7°C
+(何も表示されない)
 ```
-
 ### 出力結果
 ```bash
 $ ros2 topic echo /temperature_warning
-data: 25.799999237060547
+data: '警告: 温度が安全基準を超えています (27.3°C)'
 ---
-data: 26.899999618530273
+data: '警告: 温度が安全基準を超えています (29.0°C)'
 ```
 
 
@@ -50,19 +48,24 @@ data: 26.899999618530273
 - **GitHub Actions環境**:
   - Ubuntu 22.04
 
-## 権利
 
-- © 2025 katoh takuma
-- 本ソフトウェアパッケージは、3条項BSDライセンスのもとで再配布や利用が認められています
-- 本パッケージの一部のコードは、上田隆一氏の許可を得て、下記のスライド(© 2025 Ryuichi Ueda)（CC-BY-SA 4.0)を一部参考にし、自身の著作として作成されたものです
-  - [Robot Operating System (ROS 2)](https://ryuichiueda.github.io/slides_marp/robosys2024/lesson8.html#20)
-  
 ## 参考資料
 
- - 使用させていただいたコンテナ: [ryuichiueda/ubuntu22.04-ros2:latest](ryuichiueda/ubuntu22.04-ros2:latest)
  - [if文を使った条件分岐](https://www.javadrive.jp/python/if/index1.html)
+   
  - [ROSシステムのテスト](https://ryuichiueda.github.io/slides_marp/robosys2024/lesson10.html#1)
+   
  - [Pythonでランダムな小数・整数を生成するrandom, randrange, randintなど](https://note.nkmk.me/python-random-randrange-randint/)
+   
  - [ノードの再起動を跨いだPIDの衝突について](https://qiita.com/sile/items/c1a357efdaa9cae4cd9c)
+   
  - [Pythonのsleep関数とは？概要や使い方、応用例を解説](https://and-engineer.com/articles/ZqOo2xEAACcA8C4A)
- - [子プロセスを含めたkill](https://qiita.com/hirayama_yuuichi/items/4f097c66cb0ffc2c6db2)
+   
+#### 使用させていただいたコンテナ
+   - [ryuichiueda/ubuntu22.04-ros2:latest](ryuichiueda/ubuntu22.04-ros2:latest)
+
+## ライセンス
+- 本ソフトウェアパッケージは、3条項BSDライセンスのもとで再配布や使用が認められています。
+- © 2025 Katoh Takuma
+
+  
