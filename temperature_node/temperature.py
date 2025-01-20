@@ -21,7 +21,6 @@ class Temperature(Node):
         msg.data = round(random.uniform(15.0, 30.0), 1)
         self.pub.publish(msg)
 
-        # 高温時の警告メッセージを日本語に変更
         if msg.data > 25.0:
             warning_msg = String()
             warning_msg.data = f"警告: 温度が安全基準を超えています ({msg.data}°C)"
