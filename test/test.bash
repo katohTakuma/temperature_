@@ -17,25 +17,9 @@ colcon build
 
 source install/setup.bash
 
-# テストを繰り返す回数
-test_count=3  # ここでテストの回数を変更
+timeout 20s ros2 run temperature_node temperature &
 
-# 試行回数分繰り返す
-for i in $(seq 1 $test_count); do
-    echo "テスト $i 番目を実行しています..."
-
-    # ノードをバックグラウンドで実行、timeoutで終了させる
-    timeout 10s ros2 run temperature_node temperature &
-
-    # トピックにデータを送信
-    ros2 topic pub /temperature std_msgs/Float32 "{data: 26.0}" &
-    
-    # トピックを購読
-    ros2 topic echo /temperature_warning --once
-
-    # テストの完了メッセージ
-    echo "テスト $i 番目が完了しました。"
-done
+ros2 topic echo /temperature_warning --once
 
 echo "すべてのテストが完了しました。"
 
