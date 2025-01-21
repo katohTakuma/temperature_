@@ -63,7 +63,7 @@ data: '警告: 温度が安全基準を超えています (29.0°C)'
 
  - [連続した数値の配列(リスト)を作成するには seq/ hydrocul](https://hydrocul.github.io/wiki/programming_languages_diff/list/range.html#google_vignette)
 #### 使用させていただいたコンテナ
-   - [ryuichiueda/ubuntu22.04-ros2:latest](ryuichiueda/ubuntu22.04-ros2:latest)
+   - [ryuichiueda/ubuntu22.04-ros2:latest/ 上田隆一](ryuichiueda/ubuntu22.04-ros2:latest)
 
 ## ライセンス
 - 本ソフトウェアパッケージは、3条項BSDライセンスのもとで再配布や使用が認められています。
