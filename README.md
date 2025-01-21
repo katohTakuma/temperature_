@@ -41,11 +41,10 @@ data: '警告: 温度が安全基準を超えています (29.0°C)'
 
 
 ## テスト環境
-- **ローカル環境**:
   - Ubuntu 20.04.6 LTS
   - ROS2: foxy
  
-- **GitHub Actions環境**:
+### GitHub Actions環境:
   - Ubuntu 22.04
 
 
