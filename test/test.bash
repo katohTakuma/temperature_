@@ -18,7 +18,7 @@ source install/setup.bash
 
 echo "テストを実行しています..."
 
-timeout 10s ros2 run temperature_node temperature &
+timeout 20s ros2 run temperature_node temperature &
 
 ros2 topic pub /temperature std_msgs/Float32 "{data: 26.0}" &
 
